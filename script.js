@@ -4,13 +4,13 @@ $(document).ready(() => {
 const x = ['ready', 'steady', 'go'];
 
 //add playField const
-const playField = $('.play-field');
-const backpack = $('.backpack');
+const $playField = $('.play-field');
 
 //add object to playField
 function createItems (){
-$('.play-field').append('.backpack');
-$('.play-field').css('position', 0);
+    const $backpack = $('<div></div>').addClass('backpack'); //change to randomPos
+    $playField.append($backpack); // add .css position when multiple to see what happens
+
 }
 
 createItems();

@@ -37,6 +37,7 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   height: 600px;
+  
 }
 
 /* THIS IS THE COUNTDOWN AND SUBMIT AREA */
@@ -81,13 +82,43 @@ footer{
 
 
 /* OBJECTS LIST */
-.backpack{  background-image: url(/css/backpack.png)}
-.cellphone{  background-image: url(/css/cellphone.png)}
-.coffee{  background-image: url(/css/coffee.png)}
-.donut{  background-image: url(/css/donut.png)}
-.glasses{  background-image: url(/css/glasses.png)}
-.headphones{  background-image: url(/css/headphones.png)}
-.housekey{  background-image: url(/css/housekey.png)}
-.laptop{  background-image: url(/css/laptop.png)}
-.medicine{  background-image: url(/css/medicine.png)}
-.wallet{  background-image: url(/css/wallet.png)}
+.backpack{  background-image: url(/css/backpack.png);
+    height: 48px;
+    background-repeat: no-repeat; 
+}   
+.cellphone{  background-image: url(/css/cellphone.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.coffee{  background-image: url(/css/coffee.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.donut{  background-image: url(/css/donut.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.glasses{  background-image: url(/css/glasses.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.headphones{  background-image: url(/css/headphones.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.housekey{  background-image: url(/css/housekey.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.laptop{  background-image: url(/css/laptop.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.medicine{  background-image: url(/css/medicine.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
+.wallet{  background-image: url(/css/wallet.png);
+    height: 48px;
+    background-repeat: no-repeat;
+}
