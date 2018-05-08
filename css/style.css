@@ -10,9 +10,6 @@ h2 {
 }
 
 /* have three boxes within the game board */
-.body{
-    
-}
 
 .game-board{
     border: 5px solid black;
@@ -38,6 +35,8 @@ h2 {
   background-image: url('/css/bedroom.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
 }
 
 /* THIS IS THE COUNTDOWN AND SUBMIT AREA */

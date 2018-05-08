@@ -1,3 +1,5 @@
 const x = ['ready', 'steady', 'go'];
 
-const body = $('.body');
+const playField = $('.play-field');
+
+$('.play-field').append('<div class=".backpack"></div>');
