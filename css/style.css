@@ -13,7 +13,7 @@ h2 {
 
 .game-board{
     border: 5px solid black;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     /* will need to be content align when divs are fleshed out */
     text-align: center;
@@ -32,11 +32,11 @@ h2 {
 .play-field {
   border-bottom: 5px solid purple;
   /*background image needs to be a bedroom etc */
-  background-image: url('/css/bedroom.jpg');
-  background-size: cover;
+  background-image: url('/images/bedroom.jpg');
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 400px;
   
 }
 
@@ -71,7 +71,7 @@ h2 {
 footer{
     display: flex;
     flex-direction: column;
-    align-content: space-between;
+    text-align: center;
     justify-content: baseline;
 
 }
@@ -82,43 +82,63 @@ footer{
 
 
 /* OBJECTS LIST */
-.backpack{  background-image: url(/css/backpack.png);
-    height: 48px;
-    background-repeat: no-repeat; 
-}   
-.cellphone{  background-image: url(/css/cellphone.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.backpack {
+  background-image: url(/images/backpack.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.coffee{  background-image: url(/css/coffee.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.cellphone {
+  background-image: url(/images/cellphone.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.donut{  background-image: url(/css/donut.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.coffee {
+  background-image: url(/images/coffee.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.glasses{  background-image: url(/css/glasses.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.donut {
+  background-image: url(/images/donut.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.headphones{  background-image: url(/css/headphones.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.glasses {
+  background-image: url(/images/glasses.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.housekey{  background-image: url(/css/housekey.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.headphones {
+  background-image: url(/images/headphones.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.laptop{  background-image: url(/css/laptop.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.housekey {
+  background-image: url(/images/housekey.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.medicine{  background-image: url(/css/medicine.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.laptop {
+  background-image: url(/images/laptop.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }
-.wallet{  background-image: url(/css/wallet.png);
-    height: 48px;
-    background-repeat: no-repeat;
+
+.medicine {
+  background-image: url(/images/medicine.png);
+  height: 48px;
+  background-repeat: no-repeat;
+}
+
+.wallet {
+  background-image: url(/images/wallet.png);
+  height: 48px;
+  background-repeat: no-repeat;
 }

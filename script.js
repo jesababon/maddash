@@ -8,16 +8,34 @@ const $playField = $('.play-field');
 
 //add object to playField
 function createItems (){
-    const $backpack = $('<div></div>').addClass('backpack'); //change to randomPos
+    const $backpack = $('<div></div>').addClass('backpack').css(randomPos()); //change to randomPos
+
+
     $playField.append($backpack); // add .css position when multiple to see what happens
 
 }
 
 createItems();
-
 //add randomization of position of objects to playfield
 
+function randomPos (){
+    const left = Math.random()*window.innerWidth;
+    const top = Math.random()* window.innerHeight;
+    return{top: top, left:left};
+}
+
 //add multiple objects to playfield and randomize their starting place.
+
+
+function manyItems (){
+    for (let i = 0; i < 5; i++) {
+       
+     createItems();
+    }
+}
+
+// manyItems();
+
 
 //add function removing objects from the field
 //BONUS add <div>Collected</div> and put selected objects in this div 
