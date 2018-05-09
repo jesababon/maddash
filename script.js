@@ -7,11 +7,16 @@ const x = ['ready', 'steady', 'go'];
 const $playField = $('.play-field');
 
 //add object to playField
+//tried wrapping in window.onload = function
+
+// window.onload = 
 function createItems (){
-    const $backpack = $('<div></div>').addClass('backpack').css(randomPos()); //change to randomPos
+    const $backpack = $('<div style="height:100px;"></div>').addClass('object backpack'); //change to randomPos
 
 
-    $playField.append($backpack); // add .css position when multiple to see what happens
+
+    $playField.append($backpack).position(randomPos()); // add .css position when multiple to see what happens
+
 
 }
 
@@ -34,7 +39,7 @@ function manyItems (){
     }
 }
 
-// manyItems();
+manyItems();
 
 
 //add function removing objects from the field

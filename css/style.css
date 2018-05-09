@@ -8,17 +8,18 @@ h1{
 h2 {
   text-align: center;
 }
-
 /* have three boxes within the game board */
 
 .game-board{
     border: 5px solid black;
     /* display: flex; */
-    flex-direction: column;
+    /* flex-direction: column; <--removed. suspected objects inheriting column */
     /* will need to be content align when divs are fleshed out */
     text-align: center;
 
 }
+
+
 
 
 /* THIS IS THE TOP OF THE GAME */
@@ -27,6 +28,9 @@ h2 {
     height: 60px;
     border-bottom:5px solid blue;
 }
+
+
+
 
 /* THIS IS THE PLAYING FIELD */
 .play-field {
@@ -37,7 +41,7 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
   height: 400px;
-  
+   
 }
 
 /* THIS IS THE COUNTDOWN AND SUBMIT AREA */
@@ -80,65 +84,81 @@ footer{
    text-align: center;
 }
 
-
 /* OBJECTS LIST */
 
-.backpack {
-  background-image: url(/images/backpack.png);
+/* Create a CSS class that overrides all the inherited properties and 
+then just remove all the classes from the div 
+and add the css class that overrides everything. 
+Trying using background colors instead of images*/
+
+.object {
   height: 48px;
+  width: 40px;
   background-repeat: no-repeat;
 }
 
-.cellphone {
-  background-image: url(/images/cellphone.png);
+.object.backpack {
+  /* tried changing display to inline. tried adding .css('style', inline-block) to append function */
+  /* added duckhunt position absolute to test random */
+  background-image: url(/images/backpack.png);
   height: 48px;
+  width: 40px;
+  background-repeat: no-repeat;
+}
+
+.object.cellphone {
+  /* background-image: url(/images/cellphone.png); */
+  background-color: pink;
+  height: 48px;
+  width: 40px;
   background-repeat: no-repeat;
 }
 
 .coffee {
-  background-image: url(/images/coffee.png);
+  /* background-image: url(/images/coffee.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
 
 .donut {
-  background-image: url(/images/donut.png);
+  /* background-image: url(/images/donut.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
 
 .glasses {
-  background-image: url(/images/glasses.png);
+  /* background-image: url(/images/glasses.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
 
 .headphones {
-  background-image: url(/images/headphones.png);
+  /* background-image: url(/images/headphones.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
 
 .housekey {
-  background-image: url(/images/housekey.png);
+  /* background-image: url(/images/housekey.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
 
 .laptop {
-  background-image: url(/images/laptop.png);
+  /* background-image: url(/images/laptop.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
 
 .medicine {
-  background-image: url(/images/medicine.png);
+  /* background-image: url(/images/medicine.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
 
 .wallet {
-  background-image: url(/images/wallet.png);
+  /* background-image: url(/images/wallet.png); */
   height: 48px;
   background-repeat: no-repeat;
 }
+
