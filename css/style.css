@@ -15,7 +15,7 @@ h2 {
     /* display: flex; */
     /* flex-direction: column; <--removed. suspected objects inheriting column */
     /* will need to be content align when divs are fleshegit d out */
-    text-align: center;
+    /* text-align: center; */
 
 }
 
@@ -24,6 +24,7 @@ h2 {
 .essential{
     height: 60px;
     border-bottom:5px solid blue;
+    text-align: center;
 }
 
 
@@ -31,16 +32,14 @@ h2 {
 
 /* THIS IS THE PLAYING FIELD */
 .play-field {
-
   border-bottom: 5px solid purple;
   /*background image needs to be a bedroom etc */
   background-image: url('/images/bedroom.jpg');
-
-
-  background-size: contain;
+  background-size: auto;
   background-position: center;
   background-repeat: no-repeat;
-  height: 400px;
+  height: 300px;
+  position: relative;
    
 }
 
@@ -49,6 +48,7 @@ h2 {
 .submit-container{
     display: flex;
     flex-direction: row;
+    text-align: center;
 }
 
 .timer{
@@ -77,7 +77,6 @@ footer{
     flex-direction: column;
     text-align: center;
     justify-content: baseline;
-
 }
 
 .reset-button{
@@ -90,54 +89,56 @@ footer{
 then just remove all the classes from the div 
 and add the css class that overrides everything. 
 Trying using background colors instead of images*/
+ /* tried changing display to inline. tried adding .css('style', inline-block) to append function */
+ /* added duckhunt position absolute to test random */
+
 
 .object {
-  height: auto;
-  width: 100%;
-  background-repeat: no-repeat;
-  position: relative;
+  /* height: auto; */
+  width: 100px;
+  height: 100px;
+  /* background: green; */
+  /* background-repeat: no-repeat; */
+  /* position: absolute; */
 }
 
 .object.backpack {
-  /* tried changing display to inline. tried adding .css('style', inline-block) to append function */
-  /* added duckhunt position absolute to test random */
   background-image: url('/images/backpack.png');
-
   background-repeat: no-repeat;
 }
-
+/* 
 .object.cellphone {
-  background-image: url('/images/cellphone.png');
+  background-image: url('images/cellphone.png');
   background-repeat: no-repeat;
 }
 
 .coffee {
-  background-image: url('/images/coffee.png');
+  background-image: url('images/coffee.png');
   
 }
 
 .donut {
-  background-image: url('/images/donut.png');
+  background-image: url('images/donut.png');
   
 }
 
 .glasses {
-  background-image: url('/images/glasses.png');
+  background-image: url('images/glasses.png');
   
 }
 
 .headphones {
-  background-image: url('/images/headphones.png');
+  background-image: url('images/headphones.png');
   
 }
 
 .housekey {
-  background-image: url('/images/housekey.png');
+  background-image: url('images/housekey.png');
     
 }
 
 .laptop {
-  background-image: url('/images/laptop.png');
+  background-image: url('images/laptop.png');
     
 }
 
@@ -149,5 +150,4 @@ Trying using background colors instead of images*/
 .wallet {
   background-image: url('images/wallet.png');
     
-}
-
+} */
