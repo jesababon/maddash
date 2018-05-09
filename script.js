@@ -4,7 +4,8 @@ $(function () {
 
 //check if js is working
 const x = ['ready', 'steady', 'go'];
-
+const essential = ["🎒","📱","🔑","☕️","💻","👓","🎧","🍩","📓", "💊"];
+const misc = ['🏈','📚','🍕','🎨','⌚️'];
 //add playField const
 const $playField = $('.play-field');
 
@@ -16,30 +17,40 @@ const $playField = $('.play-field');
 //to add many random objects would i need to have the images in an array,
 //or would i be able to create a function that "fetches" a random image.
 
-function createItems (){
-    const $backpack = $('<div style="height:100px;"></div>').addClass('object backpack'); //change to randomPos
-
+function createEssentials (){
+    // const $backpack = $('<div style="height:100px;"></div>').addClass('object backpack'); //change to randomPos
     let left = Math.random() * window.innerWidth;
     let top = Math.random() * window.innerHeight;
 
-    $playField.append($backpack); // add .css position when multiple to see what happens
-    $('.object.backpack').css({left: left, top: top});
+    let $needToFind = $playField.append(essential); // add .css position when multiple to see what happens
+    $needToFind.css({left: left, top: top});
 
 
 }
 
-// createItems();
+createEssentials();
+
+function createMisc (){
+    // const $backpack = $('<div style="height:100px;"></div>').addClass('object backpack'); //change to randomPos
+    let left = Math.random() * window.innerWidth;
+    let top = Math.random() * window.innerHeight;
+
+
+    let $miscObjects = $playField.append(misc[Math.floor(Math.random() * misc.length)]); // add .css position when multiple to see what happens
+    $miscObjects.css({ left: left, top: top });
+
+
+}
 
 //add multiple objects to playfield and randomize their starting place.
-
 
 function manyItems (){
     let left = Math.random() * window.innerWidth;
     let top = Math.random() * window.innerHeight;
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 30; i++) {
        
-     createItems();
+     createMisc();
     }
 }
 
