@@ -1,4 +1,6 @@
-$(document).ready(() => {
+
+
+$(function () {
 
 //check if js is working
 const x = ['ready', 'steady', 'go'];
@@ -10,29 +12,31 @@ const $playField = $('.play-field');
 //tried wrapping in window.onload = function
 
 // window.onload = 
+
+//to add many random objects would i need to have the images in an array,
+//or would i be able to create a function that "fetches" a random image.
+
 function createItems (){
     const $backpack = $('<div style="height:100px;"></div>').addClass('object backpack'); //change to randomPos
 
+    let left = Math.random() * window.innerWidth;
+    let top = Math.random() * window.innerHeight;
 
-
-    $playField.append($backpack).position(randomPos()); // add .css position when multiple to see what happens
+    $playField.append($backpack); // add .css position when multiple to see what happens
+    $('.object.backpack').css({left: left, top: top});
 
 
 }
 
-createItems();
-//add randomization of position of objects to playfield
-
-function randomPos (){
-    const left = Math.random()*window.innerWidth;
-    const top = Math.random()* window.innerHeight;
-    return{top: top, left:left};
-}
+// createItems();
 
 //add multiple objects to playfield and randomize their starting place.
 
 
 function manyItems (){
+    let left = Math.random() * window.innerWidth;
+    let top = Math.random() * window.innerHeight;
+
     for (let i = 0; i < 5; i++) {
        
      createItems();

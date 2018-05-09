@@ -14,13 +14,10 @@ h2 {
     border: 5px solid black;
     /* display: flex; */
     /* flex-direction: column; <--removed. suspected objects inheriting column */
-    /* will need to be content align when divs are fleshed out */
+    /* will need to be content align when divs are fleshegit d out */
     text-align: center;
 
 }
-
-
-
 
 /* THIS IS THE TOP OF THE GAME */
 /* boxes include the essentials, play field and countdown.  */
@@ -92,73 +89,61 @@ and add the css class that overrides everything.
 Trying using background colors instead of images*/
 
 .object {
-  height: 48px;
-  width: 40px;
+  height: auto;
+  width: 100%;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .object.backpack {
   /* tried changing display to inline. tried adding .css('style', inline-block) to append function */
   /* added duckhunt position absolute to test random */
   background-image: url(/images/backpack.png);
-  height: 48px;
-  width: 40px;
   background-repeat: no-repeat;
 }
 
 .object.cellphone {
-  /* background-image: url(/images/cellphone.png); */
-  background-color: pink;
-  height: 48px;
-  width: 40px;
+  background-image: url(/images/cellphone.png);
   background-repeat: no-repeat;
 }
 
 .coffee {
-  /* background-image: url(/images/coffee.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/coffee.png);
+  
 }
 
 .donut {
-  /* background-image: url(/images/donut.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/donut.png);
+  
 }
 
 .glasses {
-  /* background-image: url(/images/glasses.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/glasses.png);
+  
 }
 
 .headphones {
-  /* background-image: url(/images/headphones.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/headphones.png);
+  
 }
 
 .housekey {
-  /* background-image: url(/images/housekey.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/housekey.png);
+    
 }
 
 .laptop {
-  /* background-image: url(/images/laptop.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/laptop.png);
+    
 }
 
 .medicine {
-  /* background-image: url(/images/medicine.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/medicine.png);
+    
 }
 
 .wallet {
-  /* background-image: url(/images/wallet.png); */
-  height: 48px;
-  background-repeat: no-repeat;
+  background-image: url(/images/wallet.png);
+    
 }
 
