@@ -3,27 +3,30 @@
 $(function () {
 
     //add objects
-    const essential = ["🎒", "📱", "🔑", "☕️", "💻", "👓", "🎧", "🍩", "📓", "💊"];
+    const get = ["🎒", "📱", "🔑", "☕️", "💻", "👓", "🎧", "🍩", "📓", "💊"];
     const misc = ['🏈', '📚', '🍕', '🎨', '⌚️', '⌛️', '💡', '💰', '🔧 ', '📼', '🔬', '✂️ ', '🖍', '🔮', '📿'];
 
     //add playField const
     const $playField = $('.play-field');
+    const $EssentField = $('.essential');
+    let $addtoEssential = $EssentField.append(get); //want to add just the values created in the createEssentials function
 
     //attach objects to field in random positions
     function createEssentials() {
-        const $backpack = $('<div></div>').append(essential[Math.floor(Math.random() * misc.length)]);
+        const $gottaGet = $('<div></div>').append(get[Math.floor(Math.random() * misc.length)]);
 
-        let $needToFind = $playField.append($backpack);
+        let $addGet = $playField.append($gottaGet);
         
         var x = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
         var y = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
 
 
-        $backpack.css({
+        $gottaGet.css({
             position: 'absolute',
             top: y + '%',
             left: x + '%',
         });
+        return [];
 
 
     }
@@ -47,20 +50,35 @@ $(function () {
     }
     //add multiple objects to playfield and randomize their starting place.
 
-    function manyItems() {
+    function manyMisc() {
         let left = Math.random() * window.innerWidth;
         let top = Math.random() * window.innerHeight;
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 30; i++) {
 
             makeMisc();
-            createEssentials();
-
 
         }
     }
 
-    manyItems();
+     function manyEssentials() {
+       let left = Math.random() * window.innerWidth;
+       let top = Math.random() * window.innerHeight;
+
+
+       for (let i = 0; i < 5; i++) {
+
+         createEssentials();
+
+
+
+
+       }
+     }
+
+manyEssentials();
+manyMisc();
+
 
 
     //add function removing objects from the field
