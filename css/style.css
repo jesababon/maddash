@@ -32,7 +32,7 @@ h2 {
 .play-field {
   border-bottom: 5px solid purple;
   /*need to increase background image width*/
-  background-image: url('/images/bedroom.jpg');
+  background-image: url('../images/bedroom.jpg');
   background-color: #4c4636;
   background-size: contain;
   background-position: center;

@@ -86,10 +86,13 @@ manyMisc();}
 startGame();
 
 
-
+function pickThingsUp (){
 $('.item').on('click', function () {
   $(this).remove();
-});
+  
+});}
+
+
 
 
 //add function removing objects from the field
