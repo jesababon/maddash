@@ -9,14 +9,16 @@ $(function () {
     //add playField const
     const $playField = $('.play-field');
     const $EssentField = $('.essential');
-    let $addtoEssential = $EssentField.append(get); //want to add just the values created in the createEssentials function
+    let $addtoEssential = $EssentField.append(get); // but want to add just the values created in the createEssentials function
+    
 
     //attach objects to field in random positions
     function createEssentials() {
-        const $gottaGet = $('<div></div>').append(get[Math.floor(Math.random() * misc.length)]);
+        const $gottaGet = $('<div class="item"></div>').append(get[Math.floor(Math.random() * misc.length)]);
 
         let $addGet = $playField.append($gottaGet);
-        
+
+        //help with randomization src: http://jsfiddle.net/hspvadfv/
         var x = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
         var y = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
 
@@ -32,7 +34,8 @@ $(function () {
     }
 
     function makeMisc() {
-        const $misc = $('<div></div>').append(misc[Math.floor(Math.random() * misc.length)]);
+        const $misc = $('<div class="item"></div>').append(misc[Math.floor(Math.random() * misc.length)]);
+
 
         let $notNeeded = $playField.append($misc);
 
@@ -76,12 +79,33 @@ $(function () {
        }
      }
 
+function startGame (){
 manyEssentials();
-manyMisc();
+manyMisc();}
+
+startGame();
 
 
 
-    //add function removing objects from the field
+$('.item').on('click', function () {
+  $(this).remove();
+});
+
+
+//add function removing objects from the field
+// function pickUp(){
+//     div.forEach(element =>
+//        {element.addEventListener('click', function(event){
+//            event.target.classList('item');
+//            setInterval(function remove() {
+//              event.target.remove();
+//            }, 250);
+//         //    score += 1;
+//         //    setTimeout(checkForWinner, 500);
+
+//        });
+//     });
+// }
 
 
 

@@ -8,6 +8,7 @@ h1{
 h2 {
   text-align: center;
 }
+
 /* have three boxes within the game board */
 
 .game-board{
@@ -27,15 +28,13 @@ h2 {
     text-align: center;
 }
 
-
-
-
 /* THIS IS THE PLAYING FIELD */
 .play-field {
   border-bottom: 5px solid purple;
-  /*background image needs to be a bedroom etc */
+  /*need to increase background image width*/
   background-image: url('/images/bedroom.jpg');
-  background-size: auto;
+  background-color: #4c4636;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 300px;
@@ -84,6 +83,11 @@ footer{
    text-align: center;
 }
 
+.item{
+  flex: space-between;
+
+}
+
 /* OBJECTS LIST */
 
 /* Create a CSS class that overrides all the inherited properties and 
@@ -93,20 +97,19 @@ Trying using background colors instead of images*/
  /* tried changing display to inline. tried adding .css('style', inline-block) to append function */
  /* added duckhunt position absolute to test random */
 
-
-.object {
+/* .object { */
   /* height: auto; */
-  width: 100px;
-  height: 100px;
+  /* width: 100px;
+  height: 100px; */
   /* background: green; */
   /* background-repeat: no-repeat; */
   /* position: absolute; */
-}
+/* } */
 
-.object.backpack {
+/* .object.backpack {
   background-image: url('/images/backpack.png');
   background-repeat: no-repeat;
-}
+} */
 /* 
 .object.cellphone {
   background-image: url('images/cellphone.png');
