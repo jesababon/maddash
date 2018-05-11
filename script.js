@@ -16,10 +16,6 @@ $(function() {
 // Added an Item Key but want to add just the values created in the createEssentials function
   let itemKey = $EssentField.append(emojis);
 
-
-console.log($('.play-field').classList);
-
-
   //attach objects to field in random positions
   function createEssentials() {
     const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * misc.length)]);
@@ -139,7 +135,7 @@ console.log($('.play-field').classList);
   }
 
   function manyEssentials() {
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i <= 6; i++) {
       let manyPos = {
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
@@ -155,7 +151,9 @@ console.log($('.play-field').classList);
   //add function of winnerWinner if all objects are removed
   //if class items in playfield === 0. win
   function winnerWinner() {
-    if ($('.collected').text().length > 4) {
+    // if ($('.collected').text().length > 4) { //doubling text length for some reason
+    
+    if ($('.play-field').children('.item') === 0) {
       alert('You win');
     } else alert('You lose');
   }
@@ -164,10 +162,9 @@ console.log($('.play-field').classList);
   //add function removing objects from the field
   function pickThingsUp() {
     const item = $('.item').on('click', function(e){
-      console.log(e.target.innerText);
-      $collected.append(e.target.innerText);
+      $collected.append(e.target);
       (e.target).remove();
-
+      $('.item:empty').remove();
     });
   }
 
