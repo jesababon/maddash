@@ -9,12 +9,10 @@ $(function() {
   const $playField = $('.play-field');
   const $EssentField = $('.essential');
   const clock = $('.clock');
-  let countdown = 5;
+  let countdown = 10;
   const $collected = $('.collected');
 
 
-// Added an Item Key but want to add just the values created in the createEssentials function
-  let itemKey = $EssentField.append(emojis);
 
   //attach objects to field in random positions
   function createEssentials() {
@@ -153,7 +151,7 @@ $(function() {
   function winnerWinner() {
     // if ($('.collected').text().length > 4) { //doubling text length for some reason
     
-    if ($('.play-field').children('.item') === 0) {
+    if ($('.collected').text().length - 9 >= 8) {
       alert('You win');
     } else alert('You lose');
   }
@@ -162,9 +160,9 @@ $(function() {
   //add function removing objects from the field
   function pickThingsUp() {
     const item = $('.item').on('click', function(e){
-      $collected.append(e.target);
+      $collected.append(e.target.innerText);
       (e.target).remove();
-      $('.item:empty').remove();
+      $('.item:empty').remove(); //Thanks Paris! Deletes empty divs.
     });
   }
 
