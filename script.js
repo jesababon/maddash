@@ -121,7 +121,7 @@ $(function() {
 
 
   function manyMisc() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 30; i++) {
       let manyPos = {
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
@@ -133,14 +133,14 @@ $(function() {
   }
 
   function manyEssentials() {
-    for (let i = 0; i <= 6; i++) {
+    for (let i = 0; i < 5; i++) {
       let manyPos = {
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
       };
 
       createEssentials();
-
+  
 
     }
   }
@@ -151,7 +151,7 @@ $(function() {
   function winnerWinner() {
     // if ($('.collected').text().length > 4) { //doubling text length for some reason
     
-    if ($('.collected').text().length - 9 >= 8) {
+    if ($('.collected').text().length - 9 >= 8) { //minus the "collected" characters. emoji count as two characters.
       alert('You win');
     } else alert('You lose');
   }

@@ -30,17 +30,36 @@ h2 {
 
 /* THIS IS THE PLAYING FIELD */
 .play-field {
-  border-bottom: 5px solid purple;
+  /* make grid to push positions of item divs */
+  display: grid;
+  /* margin: 0 auto; */
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+
+
+
+
   /*need to increase background image width*/
-  background-image: url('../images/bedroom.jpg');
-  background-color: #4c4636;
+  /* background-image: url('../images/bedroom.jpg'); */
+  background-color: lightpink;
   background-size: stretch;
   background-position: center;
   background-repeat: no-repeat;
   height: 300px;
   position: relative;
-  font-size: 40px;
+  border-bottom: 5px solid purple;
+  font-size: 20px;
    
+}
+
+/* highlight where divs are???? */
+.play-field > div { 
+  border: 2px solid rgb(233, 171, 88);
+  border-radius: 5px;
+  background-color: rgba(233, 171, 88, .5);
+  /* padding: 1em; */
+  color: #d9480f;
 }
 
 /* THIS IS THE COUNTDOWN AND SUBMIT AREA */
@@ -62,10 +81,6 @@ h2 {
 .collected {
   width: 32%;
   border-right: 5px solid green;
-}
-
-#ugh{
-  font-size: 38px;
 }
 
 #door{
