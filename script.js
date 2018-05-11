@@ -3,18 +3,21 @@ $(function() {
   //add objects
   const emojis = ["🎒", "📱", "🔑", "☕️", "💻", "👓", "🎧", "🍩", "📓", "💊"];
   const misc = ['🏈', '📚', '🍕', '🎨', '⌚️', '⌛️', '💡', '💰', '🔧 ', '📼', '🔬', '✂️ ', '🖍', '🔮', '📿'];
+
+
+  //add GameBoard areas
+  const $playField = $('.play-field');
+  const $EssentField = $('.essential');
   const clock = $('.clock');
-  let countdown = 10;
+  let countdown = 5;
   const $collected = $('.collected');
 
 
+// Added an Item Key but want to add just the values created in the createEssentials function
+  let itemKey = $EssentField.append(emojis);
 
 
-  //add playField const
-  const $playField = $('.play-field');
-  const $EssentField = $('.essential');
-  let $addtoEssential = $EssentField.append(emojis); // but want to add just the values created in the createEssentials function
-
+console.log($('.play-field').classList);
 
 
   //attach objects to field in random positions
@@ -136,7 +139,7 @@ $(function() {
   }
 
   function manyEssentials() {
-    for (let i = 1; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       let manyPos = {
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
@@ -149,6 +152,13 @@ $(function() {
   }
 
 
+  //add function of winnerWinner if all objects are removed
+  //if class items in playfield === 0. win
+  function winnerWinner() {
+    if ($('.collected').text().length > 4) {
+      alert('You win');
+    } else alert('You lose');
+  }
 
 
   //add function removing objects from the field
@@ -156,6 +166,7 @@ $(function() {
     const item = $('.item').on('click', function(e){
       console.log(e.target.innerText);
       $collected.append(e.target.innerText);
+      (e.target).remove();
 
     });
   }
@@ -171,7 +182,9 @@ $(function() {
         $('.clock').html(`${countdown} seconds <p>remaining</p>`);
       } else {
         clearInterval($interval);
-        //end game function
+        winnerWinner();
+
+        
       }
     }, 1000);
   }
@@ -184,12 +197,9 @@ $(function() {
     pickThingsUp();
   }
 
-
-
   startGame();
 
 
-  //add function of winnerWinner if all objects are removed
 
 
   //add <div>Collected</div> and put selected objects in this div 
