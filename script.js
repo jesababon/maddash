@@ -16,16 +16,13 @@ $(function() {
 
   //attach objects to field in random positions
   function createEssentials() {
-    const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * misc.length)]);
-
+    for (let i = 0; i < 5; i++) {
+      const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * misc[i].length)]);
+      let $addGet = $playField.append($gottaGet);
+    } //NEED TO MAKE RANDOM PLAYFIELD DIV CONSTANT
 
     //help with randomization src: http://jsfiddle.net/hspvadfv/
-
-    // let x = Math.max(0, Math.min(80, Math.ceil(Math.random() * 90)));
-    // let y = Math.max(0, Math.min(80, Math.ceil(Math.random() * 90)));
-    let $addGet = $('.box:empty').append($gottaGet);
-
-
+  
 
     // $gottaGet.css({
     //   position: 'absolute',
@@ -38,20 +35,20 @@ $(function() {
 
   function makeMisc() {
     const $misc = $('<div class="noclick"></div>').append(misc[Math.floor(Math.random() * misc.length)]);
-    let $notNeeded = $playField.append($misc);
+    let $notNeeded = $('div:empty').append($misc);
 
 
     //Added x and y randoms to the create function. then force the position to css.
-    let x = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
-    let y = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
+    // let x = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
+    // let y = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
 
 
 
 
-    $misc.css({
-      position: 'absolute',
-      top: y + '%',
-      left: x + '%',
+    // $misc.css({
+    //   position: 'absolute',
+    //   top: y + '%',
+    //   left: x + '%',
 
       //looking for overlapping solutions. found http://jsfiddle.net/AHReF/1/
 
@@ -114,8 +111,7 @@ $(function() {
       //   }
       //   for (let i = 0; i < spaceBetween.length; i++) {
       //     makeMisc(spaceBetween[i].x, spaceBetween[i].y);           
-    });
-  }
+    }
   //add multiple objects to playfield and randomize their starting place.
 
 
@@ -152,8 +148,8 @@ $(function() {
     // if ($('.collected').text().length > 4) { //doubling text length for some reason
     
     if ($('.collected').text().length - 9 >= 8) { //minus the "collected" characters. emoji count as two characters.
-      alert('You win');
-    } else alert('You lose');
+      alert('You win');}
+    // } else alert('You lose');
   }
 
 
@@ -171,10 +167,9 @@ $(function() {
   //add countdown clock
   function startClock() {
     let $interval = setInterval(function time() {
-      console.log(countdown);
       if (countdown !== 0) {
         countdown--;
-        $('.clock').html(`${countdown} seconds <p>remaining</p>`);
+        $('.clock').html(`TIMER<br><br> ${countdown} seconds<br>remaining`);
       } else {
         clearInterval($interval);
         winnerWinner();
@@ -186,7 +181,9 @@ $(function() {
 
   //add game initialization function
   function startGame() {
-    manyEssentials();
+    createEssentials();
+    makeMisc();
+    // manyEssentials();
     // manyMisc();
     startClock();
     pickThingsUp();
