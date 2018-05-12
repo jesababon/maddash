@@ -14,136 +14,23 @@ $(function() {
 
 
 
-  //attach objects to field in random positions
+  //attach multiple objects to field in random positions
   function createEssentials() {
     for (let i = 0; i < 5; i++) {
-      const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * misc[i].length)]);
+      const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * emojis[i].length)]);
       let $addGet = $playField.append($gottaGet);
     } //NEED TO MAKE RANDOM PLAYFIELD DIV CONSTANT
-
-    //help with randomization src: http://jsfiddle.net/hspvadfv/
-  
-
-    // $gottaGet.css({
-    //   position: 'absolute',
-    //   top: y + '%',
-    //   left: x + '%',
-    // });
-
-
   }
 
   function makeMisc() {
-    const $misc = $('<div class="noclick"></div>').append(misc[Math.floor(Math.random() * misc.length)]);
-    let $notNeeded = $('div:empty').append($misc);
-
-
-    //Added x and y randoms to the create function. then force the position to css.
-    // let x = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
-    // let y = Math.max(0, Math.min(60, Math.ceil(Math.random() * 100)));
-
-
-
-
-    // $misc.css({
-    //   position: 'absolute',
-    //   top: y + '%',
-    //   left: x + '%',
-
-      //looking for overlapping solutions. found http://jsfiddle.net/AHReF/1/
-
-      // let coords = {
-      //   w: $(this).outerWidth(true),
-      //   h: $(this).outerHeight(true)
-      // };
-      // let success = false;
-      // while (!success) {
-      //   coords.x = parseInt(Math.random() * ($playField - coords.w));
-      //   coords.y = parseInt(Math.random() * ($playField - coords.h));
-      //   let success = true;
-      //   $.each(positions, function () {
-      //     if (
-      //       coords.x <= (this.x + this.w) &&
-      //       (coords.x + coords.w) >= this.x &&
-      //       coords.y <= (this.y + this.h) &&
-      //       (coords.y + coords.h) >= this.y
-      //     ) {
-      //       success = false;
-      //     }
-      //   });
-      // }
-      // positions.push(coords);
-      // $(this).css({
-      //       top: coords.y + 'px',
-      //       left: coords.x + 'px'
-      //above logic would not process. kept looping.
-      //overlap tutorial in p5.js https://www.youtube.com/watch?v=XATr_jdh-44
-      //distance is greater than radius 1 + radius of 2. distance function.
-      // let protection = 0;
-      // const spaceBetween = [];
-
-      // while (spaceBetween.length < 20) {
-      //   let manyPos = {
-      //     x: Math.random() * $playField,
-      //     y: Math.random() * $playField,
-
-
-      //   };
-
-      //   let overlapping = false;
-      //   for (let j = 0; j < spaceBetween.length; j++) {
-      //     let other = spaceBetween[j];
-      //     let a = manyPos.x - other.x;
-      //     let b = manyPos.y - other.y;
-      //     let d = Math.sqrt(((a * a) + (b * b)));
-      //     if (d < 30) {
-      //       overlapping = true;
-      //     }
-      //   }
-
-
-      //   if (!overlapping) {
-      //     spaceBetween.push(manyPos);
-      //   }
-      //   protection++;
-      //   if (protection > 10) {
-      //     break;
-      //   }
-      //   for (let i = 0; i < spaceBetween.length; i++) {
-      //     makeMisc(spaceBetween[i].x, spaceBetween[i].y);           
-    }
-  //add multiple objects to playfield and randomize their starting place.
-
-
-
-  function manyMisc() {
-    for (let i = 0; i < 15; i++) {
-      let manyPos = {
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-      };
-
-      makeMisc();
-
+    for (let i = 0; i < 25; i++) {
+    const $misc = $('<div class="noclick"></div>').append(misc[Math.floor(Math.random() * misc[i].length)]);
+    let $notNeeded = $playField.append($misc);
+      $('.box:empty').remove();          
     }
   }
-
-  function manyEssentials() {
-    for (let i = 0; i < 6; i++) {
-      let manyPos = {
-        x: Math.random() * i,
-        y: Math.random() * i,
-      };
-
-      createEssentials();
   
-
-    }
-  }
-
-
   //add function of winnerWinner if all objects are removed
-  //if class items in playfield === 0. win
   function winnerWinner() {
     // if ($('.collected').text().length > 4) { //doubling text length for some reason
     
