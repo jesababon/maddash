@@ -17,16 +17,17 @@ $(function() {
   //attach multiple objects to field in random positions
   function createEssentials() {
     for (let i = 0; i < 5; i++) {
-      const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * [i])]);
+      const $gottaGet = $('<div class="item resort"></div>').append(emojis[Math.floor(Math.random() * [i])]);
       let $addGet = $playField.append($gottaGet);
+      $('div:empty').append($gottaGet); //remove empty divs
     } //NEED TO MAKE RANDOM PLAYFIELD DIV CONSTANT
   }
 
   function makeMisc() {
     for (let i = 0; i < 20; i++) {
-    const $misc = $('<div class="noclick"></div>').append(misc[Math.floor(Math.random() * [i])]);
+    const $misc = $('<div class="noclick resort"></div>').append(misc[Math.floor(Math.random() * [i])]);
     let $notNeeded = $playField.append($misc);
-    $('.box:empty').remove();    //remove empty divs      
+      $('div:empty').append($misc);   //remove empty divs      
     }
   }
   
@@ -63,11 +64,26 @@ $(function() {
     }, 1000);
   }
 
-  //add RESORT DIVS TO FAKE RANDOMIZATIONS
+  //DIV SHUFFLE SOURCE: http://jsfiddle.net/uYyAH/2/
+  function shuffle () {
+    "use strict";
+    // Cycle over each .shuffledv HTMLElement
+    $(".play-field").each(function () {
+      // Remove all divs within, store in $d
+      var $d = $(this).find("div").remove();
+      // Sort $d randomnly
+      $d.sort(function () { return Math.floor(Math.random() * $d.length); });
+      // Append divs within $d to .shuffledv again
+      $d.appendTo(this);
+    });
+  }
+
   //add game initialization function
   function startGame() {
     createEssentials();
     makeMisc();
+    $('div:empty').append(misc[Math.floor(Math.random() * [Infinity])]);
+    shuffle();
     startClock();
     pickThingsUp();
   }
