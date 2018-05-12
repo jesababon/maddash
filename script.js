@@ -17,26 +17,24 @@ $(function() {
   //attach multiple objects to field in random positions
   function createEssentials() {
     for (let i = 0; i < 5; i++) {
-      const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * emojis[i].length)]);
+      const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * [i])]);
       let $addGet = $playField.append($gottaGet);
     } //NEED TO MAKE RANDOM PLAYFIELD DIV CONSTANT
   }
 
   function makeMisc() {
     for (let i = 0; i < 25; i++) {
-    const $misc = $('<div class="noclick"></div>').append(misc[Math.floor(Math.random() * misc[i].length)]);
+    const $misc = $('<div class="noclick"></div>').append(misc[Math.floor(Math.random() * [i])]);
     let $notNeeded = $playField.append($misc);
-      $('.box:empty').remove();          
+    $('.box:empty').remove();    //remove empty divs      
     }
   }
   
   //add function of winnerWinner if all objects are removed
-  function winnerWinner() {
-    // if ($('.collected').text().length > 4) { //doubling text length for some reason
-    
+  function winnerWinner() {    
     if ($('.collected').text().length - 9 >= 8) { //minus the "collected" characters. emoji count as two characters.
       alert('You win');}
-    // } else alert('You lose');
+    else alert('You lose');
   }
 
 
@@ -54,14 +52,13 @@ $(function() {
   //add countdown clock
   function startClock() {
     let $interval = setInterval(function time() {
+      console.log(countdown);
       if (countdown !== 0) {
         countdown--;
         $('.clock').html(`TIMER<br><br> ${countdown} seconds<br>remaining`);
       } else {
         clearInterval($interval);
-        winnerWinner();
-
-        
+        winnerWinner();        
       }
     }, 1000);
   }
@@ -70,8 +67,6 @@ $(function() {
   function startGame() {
     createEssentials();
     makeMisc();
-    // manyEssentials();
-    // manyMisc();
     startClock();
     pickThingsUp();
   }
