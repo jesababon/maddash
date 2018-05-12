@@ -19,19 +19,19 @@ $(function() {
     const $gottaGet = $('<div class="item"></div>').append(emojis[Math.floor(Math.random() * misc.length)]);
 
 
-    let $addGet = $playField.append($gottaGet);
-
     //help with randomization src: http://jsfiddle.net/hspvadfv/
 
-    let x = Math.max(0, Math.min(80, Math.ceil(Math.random() * 90)));
-    let y = Math.max(0, Math.min(80, Math.ceil(Math.random() * 90)));
+    // let x = Math.max(0, Math.min(80, Math.ceil(Math.random() * 90)));
+    // let y = Math.max(0, Math.min(80, Math.ceil(Math.random() * 90)));
+    let $addGet = $('.box:empty').append($gottaGet);
 
 
-    $gottaGet.css({
-      position: 'absolute',
-      top: y + '%',
-      left: x + '%',
-    });
+
+    // $gottaGet.css({
+    //   position: 'absolute',
+    //   top: y + '%',
+    //   left: x + '%',
+    // });
 
 
   }
@@ -121,7 +121,7 @@ $(function() {
 
 
   function manyMisc() {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 15; i++) {
       let manyPos = {
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
@@ -133,10 +133,10 @@ $(function() {
   }
 
   function manyEssentials() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       let manyPos = {
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
+        x: Math.random() * i,
+        y: Math.random() * i,
       };
 
       createEssentials();
@@ -187,7 +187,7 @@ $(function() {
   //add game initialization function
   function startGame() {
     manyEssentials();
-    manyMisc();
+    // manyMisc();
     startClock();
     pickThingsUp();
   }
