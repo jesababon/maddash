@@ -23,7 +23,7 @@ $(function() {
   }
 
   function makeMisc() {
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 20; i++) {
     const $misc = $('<div class="noclick"></div>').append(misc[Math.floor(Math.random() * [i])]);
     let $notNeeded = $playField.append($misc);
     $('.box:empty').remove();    //remove empty divs      
@@ -34,7 +34,7 @@ $(function() {
   function winnerWinner() {    
     if ($('.collected').text().length - 9 >= 8) { //minus the "collected" characters. emoji count as two characters.
       alert('You win');}
-    else alert('You lose');
+    // else alert('You lose');
   }
 
 
@@ -43,7 +43,7 @@ $(function() {
     const item = $('.item').on('click', function(e){
       $collected.append(e.target.innerText);
       (e.target).remove();
-      $('.item:empty').remove(); //Thanks Paris! Deletes empty divs.
+      // $('.item:empty').remove(); // Paris, I figured it out! Deletes empty divs.
     });
   }
 
@@ -63,6 +63,7 @@ $(function() {
     }, 1000);
   }
 
+  //add RESORT DIVS TO FAKE RANDOMIZATIONS
   //add game initialization function
   function startGame() {
     createEssentials();
