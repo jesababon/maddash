@@ -1,9 +1,9 @@
-$(function() {
+$(function () {
 
   //add objects
   const emojis = ["🎒", "📱", "🔑", "☕️", "💻", "👓", "🎧", "🍩", "📓", "💊"];
   const misc = ['🏈', '📚', '🍕', '🎨', '⌚️', '⌛️', '💡', '💰', '🔧 ', '📼', '🔬', '✂️ ', '🖍', '🔮', '📿'];
-
+  const randoMisc = misc[Math.floor(Math.random() * misc.length)]; //for empty arrays
 
   //add GameBoard areas
   const $playField = $('.play-field');
@@ -16,7 +16,7 @@ $(function() {
 
   //attach multiple objects to field in random positions
   function createEssentials() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
       const $gottaGet = $('<div class="item resort"></div>').append(emojis[Math.floor(Math.random() * [i])]);
       let $addGet = $playField.append($gottaGet);
       $('div:empty').append($gottaGet); //remove empty divs
@@ -24,30 +24,28 @@ $(function() {
   }
 
   function makeMisc() {
-    for (let i = 0; i < 20; i++) {
-    const $misc = $('<div class="noclick resort"></div>').append(misc[Math.floor(Math.random() * [i])]);
-    let $notNeeded = $playField.append($misc);
-      $('div:empty').append($misc);   //remove empty divs      
+    for (let i = 0; i < 40; i++) {
+      const $misc = $('<div class="noclick resort"></div>').append(misc[Math.floor(Math.random() * [i])]);
+      let $notNeeded = $playField.append($misc);
+      $('div:empty').append(misc[3]); //remove empty divs      
     }
   }
-  
+
   //add function of winnerWinner if all objects are removed
-  function winnerWinner() {    
-    if ($('.collected').text().length - 9 >= 8) { //minus the "collected" characters. emoji count as two characters.
-      alert('You win');}
-    // else alert('You lose');
+  function winnerWinner() {
+    if ($('.collected').text().length - 9 >= 10) { //minus the "collected" characters. emoji count as two characters.
+      alert('You win');
+    } else alert('You lose');
   }
 
 
   //add function removing objects from the field
   function pickThingsUp() {
-    const item = $('.item').on('click', function(e){
+    const item = $('.item').on('click', function (e) {
       $collected.append(e.target.innerText);
-      (e.target).remove();
-      // $('.item:empty').remove(); // Paris, I figured it out! Deletes empty divs.
+      (e.target).remove(); // $('.item:empty').remove(); // Paris, I figured it out! Deletes empty divs.
     });
   }
-
 
 
   //add countdown clock
@@ -56,23 +54,25 @@ $(function() {
       console.log(countdown);
       if (countdown !== 0) {
         countdown--;
-        $('.clock').html(`TIMER<br><br> ${countdown} seconds<br>remaining`);
+        $('.clock').html(`TIMER<br>${countdown} seconds<br>remaining`);
       } else {
         clearInterval($interval);
-        winnerWinner();        
+        winnerWinner();
       }
     }, 1000);
   }
 
   //DIV SHUFFLE SOURCE: http://jsfiddle.net/uYyAH/2/
-  function shuffle () {
+  function shuffle() {
     "use strict";
     // Cycle over each .shuffledv HTMLElement
     $(".play-field").each(function () {
       // Remove all divs within, store in $d
       var $d = $(this).find("div").remove();
       // Sort $d randomnly
-      $d.sort(function () { return Math.floor(Math.random() * $d.length); });
+      $d.sort(function () {
+        return Math.floor(Math.random() * $d.length);
+      });
       // Append divs within $d to .shuffledv again
       $d.appendTo(this);
     });
@@ -82,11 +82,11 @@ $(function() {
   function startGame() {
     createEssentials();
     makeMisc();
-    $('div:empty').append(misc[Math.floor(Math.random() * [Infinity])]);
     shuffle();
     startClock();
     pickThingsUp();
   }
+
 
   startGame();
 
