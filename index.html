@@ -1,41 +1,68 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Class Dash</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-        <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Class Dash</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
 </head>
+
 <body>
-    <h1>CLASS DASH</h1>
-    <div class="game-board">
-        <div class="essential">
-            <h3>PICK UP 5 THINGS QUICKLY OR YOU WILL BE LATE!
-            <br>
-         🎒 📱 🔑 ☕️ 💻 👓 🎧 🍩 📓 💊</h3>
-        </div>
-        <div class="play-field">
-        </div>
-        <div class="submit-container">
-            <div class="clock">Timer</div>     
-            <div class="collected">COLLECTED<br></div>       
-            <div class="button input" id='door'>DOOR</div>
-        </div>
+  <h1>CLASS DASH</h1>
+  <div class="game-board">
+    <div class="essential">
+      <h3>PICK UP 5 THINGS QUICKLY OR YOU WILL BE LATE!
+        <br> 🎒 📱 🔑 ☕️ 💻 👓 🎧 🍩 📓 💊</h3>
+    </div>
+    <div class="play-field">
+    </div>
+    <div class="submit-container">
+      <div class="clock">Timer</div>
+      <div class="collected">COLLECTED<br>
+      </div>
+      <div class="button input" id='door'>DOOR</div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Modal Header</h2>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the Modal Body</p>
+        <p>Some other text...</p>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
     </div>
 
-    <footer>
-        <p><button enabled="enabled" class='reset-button'>Start Over?</button></p>
+  </div>
 
-        <h5 class='footer-item'>Jesica Ababon © 2018</h5>
-    </footer>
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
+  <footer>
+    <p>
+      <button enabled="enabled" class='reset-button' onclick="reload()">Start Over?</button>
+    </p>
+    <script>
+      function reload() {location.reload();}
+    </script>
+    <h5 class='footer-item'>Jesica Ababon © 2018</h5>
+  </footer>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

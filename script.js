@@ -3,10 +3,6 @@ $(function () {
   //add objects
   const emojis = ["🎒", "📱", "🔑", "☕️", "💻", "👓", "🎧", "🍩", "📓", "💊"];
   const misc = ['🏈', '📚', '🍕', '🎨', '⌚️', '⌛️', '💡', '💰', '🔧 ', '📼', '🔬', '✂️ ', '🖍', '🔮', '📿', '🥡', '⚽️', '🎮', '📟', '🧦', '🌂', '🥨', '🥪', '📀'];
-
-
-
-
   const randoMisc = misc[Math.floor(Math.random() * misc.length)]; //for empty arrays
 
   //add GameBoard areas
@@ -15,6 +11,30 @@ $(function () {
   const clock = $('.clock');
   let countdown = 10;
   const $collected = $('.collected');
+  
+  //add win and lose Modals: source https://www.w3schools.com/howto/howto_css_modals.asp
+  // Get the modal
+  const modal = $('#myModal')[0]; //https://stackoverflow.com/questions/4069982/document-getelementbyid-vs-jquery
+
+  // Get the <span> element that closes the modal
+  const span = $('.close')[0];
+
+  // When the user clicks the button, open the modal 
+  const winner = function () {
+    modal.style.display = "block";
+  };
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 
 
 
@@ -31,39 +51,8 @@ $(function () {
     for (let i = 0; i < 20; i++) {
       const $misc = $('<div class="noclick resort"></div>').append(misc[Math.floor(Math.random() * [misc.length])]);
       let $notNeeded = $playField.append($misc);
-      $('div:empty').append(misc[3]); //remove empty divs      
+      $('div:empty').append(randoMisc); //remove empty divs      
     }
-  }
-
-  //add function of winnerWinner if all objects are removed
-  function winnerWinner() {
-    if ($('.collected').text().length - 9 >= 10) { //minus the "collected" characters. emoji count as two characters.
-      alert('You win');
-    } else alert('You lose');
-  }
-
-
-  //add function removing objects from the field
-  function pickThingsUp() {
-    const item = $('.item').on('click', function (e) {
-      $collected.append(e.target.innerText);
-      $(event.target).text(" ");
-    });
-  }
-
-
-  //add countdown clock
-  function startClock() {
-    let $interval = setInterval(function time() {
-      console.log(countdown);
-      if (countdown !== 0) {
-        countdown--;
-        $('.clock').html(`TIMER<br>${countdown} seconds<br>remaining`);
-      } else {
-        clearInterval($interval);
-        winnerWinner();
-      }
-    }, 1000);
   }
 
   //DIV SHUFFLE SOURCE: http://jsfiddle.net/uYyAH/2/
@@ -82,12 +71,41 @@ $(function () {
     });
   }
 
+  //add function collecting objects from the field
+  function pickThingsUp() {
+    const item = $('.item').on('click', function (e) {
+      $collected.append(e.target.innerText);
+      $(event.target).text(" ");
+    });
+  }
+
+  //add countdown clock
+  function startClock() {
+    let $interval = setInterval(function time() {
+      console.log(countdown);
+      if (countdown !== 0) {
+        countdown--;
+        $('.clock').html(`TIMER<br>${countdown} seconds<br>remaining`);
+      } else {
+        clearInterval($interval);
+        winnerWinner();
+      }
+    }, 1000);
+  }
+
+  //add function of winnerWinner if all objects are removed
+  function winnerWinner() {
+    if ($('.collected').text().length >= 25) { //"$('.collected') length is 24 with 4 emoji.
+    winner();
+    } else alert('You lose');
+  }
+
   //add game initialization function
   function startGame() {
     createEssentials();
     makeMisc();
     shuffle();
-    // startClock();
+    startClock();
     pickThingsUp();
   }
 

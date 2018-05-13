@@ -123,71 +123,99 @@ footer{
   }
 }
 
+/* The Modal (background) */
 
-/* OBJECTS LIST */
-
-/* Create a CSS class that overrides all the inherited properties and 
-then just remove all the classes from the div 
-and add the css class that overrides everything. 
-Trying using background colors instead of images*/
- /* tried changing display to inline. tried adding .css('style', inline-block) to append function */
- /* added duckhunt position absolute to test random */
-
-/* .object { */
-  /* height: auto; */
-  /* width: 100px;
-  height: 100px; */
-  /* background: green; */
-  /* background-repeat: no-repeat; */
-  /* position: absolute; */
-/* } */
-
-/* .object.backpack {
-  background-image: url('/images/backpack.png');
-  background-repeat: no-repeat;
-} */
-/* 
-.object.cellphone {
-  background-image: url('images/cellphone.png');
-  background-repeat: no-repeat;
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
-.coffee {
-  background-image: url('images/coffee.png');
-  
+/* Modal Content */
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
 }
 
-.donut {
-  background-image: url('images/donut.png');
-  
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
 }
 
-.glasses {
-  background-image: url('images/glasses.png');
-  
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
 }
 
-.headphones {
-  background-image: url('images/headphones.png');
-  
+/* The Close Button */
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.housekey {
-  background-image: url('images/housekey.png');
-    
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.laptop {
-  background-image: url('images/laptop.png');
-    
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
 }
 
-.medicine {
-  background-image: url('images/medicine.png');
-    
+.modal-body {
+  padding: 2px 16px;
 }
 
-.wallet {
-  background-image: url('images/wallet.png');
-    
-} */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
