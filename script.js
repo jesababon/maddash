@@ -2,7 +2,11 @@ $(function () {
 
   //add objects
   const emojis = ["🎒", "📱", "🔑", "☕️", "💻", "👓", "🎧", "🍩", "📓", "💊"];
-  const misc = ['🏈', '📚', '🍕', '🎨', '⌚️', '⌛️', '💡', '💰', '🔧 ', '📼', '🔬', '✂️ ', '🖍', '🔮', '📿'];
+  const misc = ['🏈', '📚', '🍕', '🎨', '⌚️', '⌛️', '💡', '💰', '🔧 ', '📼', '🔬', '✂️ ', '🖍', '🔮', '📿', '🥡', '⚽️', '🎮', '📟', '🧦', '🌂', '🥨', '🥪', '📀'];
+
+
+
+
   const randoMisc = misc[Math.floor(Math.random() * misc.length)]; //for empty arrays
 
   //add GameBoard areas
@@ -16,16 +20,16 @@ $(function () {
 
   //attach multiple objects to field in random positions
   function createEssentials() {
-    for (let i = 0; i < 10; i++) {
-      const $gottaGet = $('<div class="item resort"></div>').append(emojis[Math.floor(Math.random() * [i])]);
+    for (let i = 0; i < 5; i++) {
+      const $gottaGet = $('<div class="item resort"></div>').append(emojis[Math.floor(Math.random() * [emojis.length])]);
       let $addGet = $playField.append($gottaGet);
       $('div:empty').append($gottaGet); //remove empty divs
-    } //NEED TO MAKE RANDOM PLAYFIELD DIV CONSTANT
+    } //NEED TO MAKE RANDOM PLAYFIELD DIV CONSTANT}
   }
 
   function makeMisc() {
-    for (let i = 0; i < 40; i++) {
-      const $misc = $('<div class="noclick resort"></div>').append(misc[Math.floor(Math.random() * [i])]);
+    for (let i = 0; i < 20; i++) {
+      const $misc = $('<div class="noclick resort"></div>').append(misc[Math.floor(Math.random() * [misc.length])]);
       let $notNeeded = $playField.append($misc);
       $('div:empty').append(misc[3]); //remove empty divs      
     }
@@ -43,7 +47,7 @@ $(function () {
   function pickThingsUp() {
     const item = $('.item').on('click', function (e) {
       $collected.append(e.target.innerText);
-      (e.target).remove(); // $('.item:empty').remove(); // Paris, I figured it out! Deletes empty divs.
+      $(event.target).text(" ");
     });
   }
 
@@ -83,7 +87,7 @@ $(function () {
     createEssentials();
     makeMisc();
     shuffle();
-    startClock();
+    // startClock();
     pickThingsUp();
   }
 
