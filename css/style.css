@@ -5,6 +5,7 @@ header{
 h1{
     text-align: center;
     font-family: 'Stint Ultra Expanded', sans-serif;
+    color: darkgreen;
     ;
 
 }
@@ -72,26 +73,22 @@ span:hover {
     display: flex;
     flex-direction: row;
     text-align: center;
+    font-family: 'Stint Ultra Expanded', sans-serif;
+    font-size: 80%;
+
 }
 
 .clock{
-    width: 32%;
-    border-right: 5px solid red;
+    width: 49%;
+    border: 5px solid green;
     align-content: baseline;
-    font-family: 'Pontano Sans', sans-serif;
-
+    
 }
 
 .collected {
-  width: 32%;
-  border-right: 5px solid green;
-  font-family: 'Pontano Sans',
-  sans-serif;
-}
+  width: 49%;
+  border: 5px solid green;
 
-#door{
-    width: 32%;
-    border-left: 5px solid pink;
 }
 
 /* THIS IS THE FOOTER */
@@ -106,6 +103,8 @@ footer{
 
 .reset-button{
    text-align: center;
+   border-radius: 12px;
+   color: green;
 }
 
 /* .item{
@@ -132,23 +131,26 @@ footer{
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  padding-top: 100px;
+  padding-top: 50px;
   /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
+  width: fit-content;
+  height: fit-content;
   overflow: auto;
   /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+  text-align: center;
+  font-family: 'Stint Ultra Expanded',sans-serif;
+  font-size: 80%;
+  align-self: center;
 }
 
 /* Modal Content */
+/* source https: //www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
 
 .modal-content {
   position: relative;

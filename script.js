@@ -11,10 +11,17 @@ $(function () {
   const clock = $('.clock');
   let countdown = 10;
   const $collected = $('.collected');
+
+  //add sounds
+  let standclear = $('#standclear')[0];
+  let playStandClear = function() {
+    standclear.play();
+  };
   
   //add win and lose Modals: source https://www.w3schools.com/howto/howto_css_modals.asp
   // Get the modal
-  const modal = $('#myModal')[0]; //https://stackoverflow.com/questions/4069982/document-getelementbyid-vs-jquery
+  const modal = $('#winOne')[0]; //accurate jquery calls source: https://stackoverflow.com/questions/4069982/document-getelementbyid-vs-jquery
+  const loseOne = $('#loseOne')[0];
 
   // Get the <span> element that closes the modal
   const span = $('.close')[0];
@@ -22,17 +29,30 @@ $(function () {
   // When the user clicks the button, open the modal 
   const winner = function () {
     modal.style.display = "block";
+    playStandClear();
+  };
+
+  const loser = function () {
+    loseOne.style.display = "block";
+    playStandClear();
   };
 
   // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
+  $('.close')[0].onclick = function () {
     modal.style.display = "none";
   };
+  $('.close')[1].onclick = function () {
+    loseOne.style.display = "none";
+  };
+
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
+    }
+    if (event.target == loseOne) {
+      loseOne.style.display = "none";
     }
   };
 
@@ -82,10 +102,9 @@ $(function () {
   //add countdown clock
   function startClock() {
     let $interval = setInterval(function time() {
-      console.log(countdown);
       if (countdown !== 0) {
         countdown--;
-        $('.clock').html(`TIMER<br>${countdown} seconds<br>remaining`);
+        $('.clock').html(`TIME REMAINING<br><b>0${countdown}:00</b><br>`);
       } else {
         clearInterval($interval);
         winnerWinner();
@@ -95,9 +114,10 @@ $(function () {
 
   //add function of winnerWinner if all objects are removed
   function winnerWinner() {
-    if ($('.collected').text().length >= 25) { //"$('.collected') length is 24 with 4 emoji.
+    if ($('.collected').text().length >= 19) { //"$('.collected') length is 24 with 4 emoji.
     winner();
-    } else alert('You lose');
+    
+    } else loser();
   }
 
   //add game initialization function
