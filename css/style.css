@@ -1,6 +1,7 @@
 body {
   background-image: url('/images/wood.jpeg');
   background-size: contain;
+  text-align: center;
 }
 
 header {
@@ -27,6 +28,16 @@ h3 {
   sans-serif;
 
 }
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 
 .game-board {
   border: 5px solid black;

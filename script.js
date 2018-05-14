@@ -122,7 +122,7 @@ $(function () {
 
   //add function of winnerWinner if all objects are removed
   function winnerWinner() {
-    if ($('.collected').text().length >= 19) { //"$('.collected') length is 24 with 4 emoji.
+    if ($('.collected').text().length >= 34) { //"$('.collected') length is 24 with 4 emoji.
     winner();
     
     } else loser();
