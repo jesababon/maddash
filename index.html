@@ -15,14 +15,16 @@
   <h1>MAD DASH</h1>
   <div class="game-board">
     <div class="essential">
-      <h3>PICK UP 5 THINGS QUICKLY OR YOU WILL BE LATE!
-        <br> 🎒 📱 🔑 ☕️ 💻 👓 🎧 🍩 📓 💊</h3>
+      <h2>Level One<br>QUICKLY GATHER 5 ESSENTIALS BEFORE YOU HAVE TO LEAVE!</h2>
+      <h3>KEY: 🎒 📱 🔑 ☕️ 💻 👓 🎧 🍩 📓 💊</h3>
     </div>
     <div class="play-field">
     </div>
     <div class="submit-container">
       <div class="clock">TIMER</div>
-      <div class="collected">COLLECTED<br></div>
+      <div class="collected">COLLECTED
+        <br>
+      </div>
     </div>
 
     <!-- The Modal -->
@@ -40,11 +42,13 @@
           <p>Another day, another dollar...</p>
           <p>
             <img src="/images/subwaystuffed.gif" alt="crowded train" width='50%'>
+            <!-- src: giphy.com -->
           </p>
           <p>Tip: If you pack the night before, your mornings will feel easier.</p>
         </div>
         <div class="modal-footer">
-        <button enabled="enabled" class='reset-button' onclick="reload()">Next Level?</button>
+          <button enabled="enabled" class='reset-button' onclick="location.href = 'index2.html'">Next Level?</button>
+
         </div>
       </div>
     </div>
@@ -60,11 +64,12 @@
           <p>Sigh, this too shall pass...</p>
           <p>
             <img src="/images/missedtrain.gif" alt="missed train" width='100%'>
+            <!-- src: giphy.com -->
           </p>
           <p>It's ok, we all have bad days.</p>
         </div>
         <div class="modal-footer">
-        <button enabled="enabled" class='reset-button' onclick="reload()">Play Again?</button>
+          <button enabled="enabled" class='reset-button' onclick="reload()">Play Again?</button>
         </div>
       </div>
     </div>
@@ -84,7 +89,7 @@
     </footer>
 
     <audio id="standclear">
-        <source src="/sounds/standclear.mp3" type="audio/mp3">
+      <source src="/sounds/standclear.mp3" type="audio/mp3">
     </audio>
 
     <script src="http://d3js.org/d3.v3.min.js"></script>

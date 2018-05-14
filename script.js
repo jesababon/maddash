@@ -17,6 +17,8 @@ $(function () {
   let playStandClear = function() {
     standclear.play();
   };
+
+  
   
   //add win and lose Modals: source https://www.w3schools.com/howto/howto_css_modals.asp
   // Get the modal
