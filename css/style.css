@@ -132,12 +132,6 @@ footer {
   pointer-events: none;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    max-width: 100%;
-  }
-}
-
 /* The Modal (background) */
 
 .modal {
@@ -149,8 +143,8 @@ footer {
   /* Sit on top */
   padding-top: 50px;
   /* Location of the box */
-  left: 0;
-  top: 0;
+  left:20%;
+  top: 0%;
   width: fit-content;
   height: fit-content;
   overflow: auto;
@@ -206,6 +200,17 @@ footer {
     opacity: 1
   }
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    max-width: 100%;
+  }
+  .modal {
+    left: 0%;
+    top: 0%;
+  }
+}
+
 
 /* The Close Button */
 
