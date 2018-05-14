@@ -1,0 +1,82 @@
+body {
+  background-image: url('/images/wood.jpeg');
+  background-size: contain;
+  text-align: center;
+}
+
+header {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px #000;
+  font-family: 'Stint Ultra Expanded', sans-serif;
+}
+
+h2 {
+  font-size: 100%;
+  font-family: 'Pontano Sans',sans-serif;
+  letter-spacing: 2px;
+
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Pontano Sans'
+  sans-serif;
+
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+
+.game-board {
+  border: 5px solid black;
+  background-color: white;
+  font-family: 'Pontano Sans';
+  flex-direction: column;
+  color: #4c4636;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  align-content: center;
+  height: auto;
+  text-align: center;
+}
+
+
+/* THIS IS THE FOOTER */
+
+footer {
+  flex-direction: column;
+  text-align: center;
+  /* justify-content: baseline; */
+  padding: 2px;
+}
+
+.reset-button {
+  text-align: center;
+  border-radius: 12px;
+  color: #4c4636;
+  font-size: 20px;
+}
+
+.noclick {
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    max-width: 100%;
+  }
+}

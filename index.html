@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>MAD DASH</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/landingstyle.css" />
   <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
 </head>
@@ -14,94 +14,24 @@
 <body>
   <h1>MAD DASH</h1>
   <div class="game-board">
-    <div class="essential">
-      <h2>Level One
-        <br>QUICKLY GATHER 5 ESSENTIALS BEFORE YOU HAVE TO LEAVE!</h2>
-      <h3>KEY: 🎒 📱 🔑 ☕️ 💻 👓 🎧 🍩 📓 💊</h3>
-    </div>
-    <div class="play-field">
-    </div>
-    <div class="submit-container">
-      <div class="clock">TIMER</div>
-      <div class="collected">COLLECTED
-        <br>
-      </div>
-    </div>
-
-    <!-- The Modal -->
-    <!-- source https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 -->
-    <div id="winOne" class="modal">
-
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Yay!
-            <br>Success! Just made the train!</h2>
-        </div>
-        <div class="modal-body">
-          <p>Another day, another dollar...</p>
-          <p>
-            <img src="/images/subwaystuffed.gif" alt="crowded train" width='50%'>
-            <!-- src: giphy.com -->
-          </p>
-          <p>Tip: If you pack the night before, your mornings will feel easier.</p>
-        </div>
-        <div class="modal-footer">
-          <button enabled="enabled" class='reset-button' onclick="location.href = 'index2.html'">Next Level?</button>
-
-        </div>
-      </div>
-    </div>
-
-    <div id="loseOne" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Oh no!
-            <br>You missed the train and were unprepared for your day!</h2>
-        </div>
-        <div class="modal-body">
-          <p>Sigh, this too shall pass...</p>
-          <p>
-            <img src="/images/missedtrain.gif" alt="missed train" width='100%'>
-            <!-- src: giphy.com -->
-          </p>
-          <p>It's ok, we all have bad days.</p>
-        </div>
-        <div class="modal-footer">
-          <button enabled="enabled" class='reset-button' onclick="reload()">Play Again?</button>
-        </div>
-      </div>
-    </div>
-
+    <div class="instructions">
+      <h2>Oh No! You overslept!
+        <br>Your room is a mess. Will you get your things together in time?</h2>
+      <br>The next train leaves in ten... seconds!
+  </div>
 
     <footer>
       <p>
-        <button enabled="enabled" class='reset-button' onclick="reload()">Start Over?</button>
+        <button enabled="enabled" class='reset-button' onclick="window.location.href = 'index1.html'">Start Game</button>
       </p>
-      <script>
-        function reload() {
-          location.reload();
-        }
-
-      </script>
-      <h5 class='footer-item'>Jesica Ababon © 2018</h5>
-    </footer>
-
-    <audio id="standclear">
-      <source src="/sounds/standclear.mp3" type="audio/mp3">
-    </audio>
-
-    <audio id="blop">
-      <source src="/sounds/blop.mp3" type="audio/mp3">
-    </audio>
+  </div>
+<h5 class='footer-item'>
+<a href="https://www.linkedin.com/in/ababon/">Jesica Ababon © 2018</a></h5>
 
 
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+  </footer>
+
+
 </body>
 
 </html>
