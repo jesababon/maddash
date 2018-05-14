@@ -1,5 +1,6 @@
 body {
-  background-image: url('/images/wood.jpeg');
+  background-image: url('../images/wood.jpeg');
+
   background-size: contain;
   text-align: center;
 }
