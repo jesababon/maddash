@@ -23,6 +23,12 @@ $(function () {
     nogodno.play();
   };
 
+  let blop = $('#blop')[0];
+  let playBlop = function () {
+    blop.play();
+  };
+
+
   
   //add win and lose Modals: source https://www.w3schools.com/howto/howto_css_modals.asp
   // Get the modal
@@ -101,6 +107,7 @@ $(function () {
   function pickThingsUp() {
     const item = $('.item').on('click', function (e) {
       $collected.append(e.target.innerText);
+      playBlop();
       $(event.target).text(" ");
     });
   }

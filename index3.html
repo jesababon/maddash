@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MAD DASH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Stint+Ultra+Expanded" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+</head>
+
+<body>
+  <h1>MAD DASH</h1>
+  <div class="game-board">
+    <div class="essential">
+      <h2>QUICKLY GATHER 10 ESSENTIALS BEFORE YOU HAVE TO LEAVE!</h2>
+      <h3>KEY: 🎒 📱 🔑 ☕️ 💻 👓 🎧 🍩 📓 💊</h3>
+    </div>
+    <div class="play-field">
+    </div>
+    <div class="submit-container">
+      <div class="clock">TIMER</div>
+      <div class="collected">COLLECTED
+        <br>
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <!-- source https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 -->
+    <div id="winOne" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>You Won!
+            <br>You got to work on time and won all the awards!</h2>
+        </div>
+        <div class="modal-body">
+          <p>I always believed in you.</p>
+          <p>
+            <img src="/images/thebest.gif" alt="you are the best" width='50%'>
+            <!-- src: giphy.com -->
+          </p>
+          <p>Thank you for playing. You're the best!</p>
+        </div>
+        <div class="modal-footer">
+          <button enabled="enabled" class='reset-button' onclick="reload()">Play Again?</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="loseOne" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Oh no!
+            <br>You lost. What is life?</h2>
+
+        </div>
+        <div class="modal-body">
+          <p>The rush hour hoards ellicit an existential crisis.</p>
+          <p>
+            <img src="/images/cantmakeit.gif" alt="ugh" width='100%'>
+            <!-- src: giphy.com -->
+          </p>
+          <p>Pro Tip: Get it together.</p>
+        </div>
+        <div class="modal-footer">
+          <button enabled="enabled" class='reset-button' onclick="reload()">Play Again?</button>
+        </div>
+      </div>
+    </div>
+
+
+    <footer>
+      <button enabled="enabled" class='reset-button' onclick="reload()">Start Over?</button>
+      <script>
+        function reload() {
+          location.reload();
+        }
+
+      </script>
+      <h5 class='footer-item'>Jesica Ababon © 2018</h5>
+    </footer>
+
+    <audio id="allido">
+      <source src="/sounds/allido.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="sosad">
+      <source src="/sounds/sosad.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="blop">
+      <source src="/sounds/blop.mp3" type="audio/mp3">
+    </audio>
+
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="script3.js"></script>
+</body>
+
+</html>

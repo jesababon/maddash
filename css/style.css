@@ -103,16 +103,16 @@ span:hover {
 /* THIS IS THE FOOTER */
 
 footer {
-  display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: baseline;
+  /* justify-content: baseline; */
+  padding: 2px;
 }
 
 .reset-button {
   text-align: center;
   border-radius: 12px;
-  color: green;
+  color: #4c4636;
   font-size: 15px;
 }
 
@@ -213,7 +213,7 @@ footer {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: #8c7e5b;
   color: white;
 }
 
@@ -223,6 +223,6 @@ footer {
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background-color: #8c7e5b;
   color: white;
 }
