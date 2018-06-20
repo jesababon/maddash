@@ -1,7 +1,7 @@
 # Welcome to Mad Dash
 
 ## URL
-Link: https://pages.git.generalassemb.ly/jesababon/maddash/
+Link: https://jesababon.github.io/maddash/
 
 ## Overview
 Mad Dash is a hide and seek game.
